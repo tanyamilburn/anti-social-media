@@ -67,7 +67,7 @@ module.exports = {
       console.log('You are adding a friend');
       console.log(req.body);
       User.findOneAndUpdate(
-        { _id: req.params.studentId },
+        { _id: req.params.userId },
         { $addToSet: { friends: req.body } },
         { runValidators: true, new: true }
       )
@@ -88,12 +88,12 @@ module.exports = {
         { $pull: { friends: { friendId: req.params.friendId } } },
         { runValidators: true, new: true }
       )
-        .then((thought) =>
-          !thought
+        .then((user) =>
+          !user
             ? res
                 .status(404)
-                .json({ message: 'No thoughts found' })
-            : res.json(thought)
+                .json({ message: 'No users found' })
+            : res.json(user)
         )
         .catch((err) => res.status(500).json(err));
     },
