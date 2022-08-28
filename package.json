@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index",
     "dev": "nodemon index",
-    "seed": "node utils/seed",
+    "seed": "node seeder.js",
     "heroku-postbuild": "node utils/seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

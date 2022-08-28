@@ -1,7 +1,7 @@
 const fs = require('fs')
 const mongoose = require('mongoose')
-const colors = require('colors')
-const db = require('./config/db')
+// const colors = require('colors')
+const db = require('./config/connection')
 const {User, Thought} = require('./models')
 
 const URI = `mongodb://127.0.0.1:27017/socialDB`
@@ -10,8 +10,8 @@ mongoose.connect(URI, {
     useUnifiedTopology: true,
   })
 //add data
-  const users = JSON.parse(fs.readFileSync(`${__dirname}/_data/users.json`, 'utf-8'))
-  const thoughts = JSON.parse(fs.readFileSync(`${__dirname}/_data/thoughts.json`, 'utf-8'))
+  const users = JSON.parse(fs.readFileSync(`${__dirname}/data/users.json`, 'utf-8'))
+  const thoughts = JSON.parse(fs.readFileSync(`${__dirname}/data/thoughts.json`, 'utf-8'))
 
 
   const importData = async () => {
