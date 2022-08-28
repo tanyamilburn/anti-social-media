@@ -14,6 +14,8 @@ This is a basic backend for a social network API. You can test the get, put, pos
 
   ## Usage
 This application is run on your local server and requires MongoDB. 
+[Walk through video for Users] (https://drive.google.com/file/d/1xFA2_Ljs1Isc6Llno5BuHFMqYv-6GmgB/view?usp=sharing)
+[Walk through video for Thoughts] (https://drive.google.com/file/d/176nGaA-R8585gZ4JmB4Bd7R-gOQs35Yb/view?usp=sharing)
 
 
   ## Installation

@@ -73,15 +73,13 @@ createReaction(req, res) {
           { runValidators: true, new: true }
         )
       
-      .then((thought) =>
-        !thought
-        ? res
-        .status(404)
-        .json({message: 'No thought with that ID'})
-        : res.json('Created reaction')
-        )
-  
-      .catch((err) => res.status(500).json(err));
+        .then((thought) => {
+          if (!thought) {
+            res.status(404).json({ message: "No thought with that ID" })
+          }
+        })
+        .then(() => res.json({ message: "Reaction added to user!" }))
+        .catch((err) => res.status(500).json(err))
   },
 
 deleteReaction (req, res) {
@@ -91,15 +89,13 @@ deleteReaction (req, res) {
         { runValidators: true, new: true }
       )
     
-    .then((thought) =>
-      !thought
-      ? res
-      .status(404)
-      .json({message: 'No thought with that ID'})
-      : res.json('Created reaction')
-      )
-
-    .catch((err) => res.status(500).json(err));
+      .then((thought) => {
+        if (!thought) {
+          res.status(404).json({ message: "No thought with that ID" })
+        }
+      })
+      .then(() => res.json({ message: "Reaction deleted!" }))
+      .catch((err) => res.status(500).json(err))
 },
 };
 
